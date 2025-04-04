@@ -9,7 +9,7 @@ public interface TaskService {
 
     Task save(Task task);
 
-    void deleteById(int id);
+    boolean deleteById(int id);
 
     boolean update(Task task);
 
@@ -20,4 +20,6 @@ public interface TaskService {
     List<Task> findAllPendingTasks();
 
     List<Task> findAllCompletedTasks();
+
+    boolean completeTask(Task task);
 }

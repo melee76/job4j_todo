@@ -19,8 +19,8 @@ public class SimpleTaskService implements TaskService {
     }
 
     @Override
-    public void deleteById(int id) {
-        tasksRepository.deleteById(id);
+    public boolean deleteById(int id) {
+        return tasksRepository.deleteById(id);
     }
 
     @Override
@@ -46,5 +46,10 @@ public class SimpleTaskService implements TaskService {
     @Override
     public List<Task> findAllCompletedTasks() {
         return tasksRepository.findAllCompletedTasks();
+    }
+
+    @Override
+    public boolean completeTask(Task task) {
+        return tasksRepository.completeTask(task);
     }
 }

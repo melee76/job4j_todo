@@ -8,7 +8,7 @@ public interface TasksRepository {
 
     Task save(Task task);
 
-    void deleteById(int id);
+    boolean deleteById(int id);
 
     boolean update(Task task);
 
@@ -19,4 +19,6 @@ public interface TasksRepository {
     List<Task> findAllPendingTasks();
 
     List<Task> findAllCompletedTasks();
+
+    boolean completeTask(Task task);
 }
